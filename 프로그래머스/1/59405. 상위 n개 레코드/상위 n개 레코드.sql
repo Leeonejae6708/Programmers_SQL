@@ -1,0 +1,8 @@
+-- 코드를 입력하세요
+SELECT NAME
+FROM (SELECT 
+        NAME,
+        DATETIME,
+        RANK() over(ORDER BY DATETIME) RANK_1
+     FROM ANIMAL_INS) a
+WHERE RANK_1 = 1;
