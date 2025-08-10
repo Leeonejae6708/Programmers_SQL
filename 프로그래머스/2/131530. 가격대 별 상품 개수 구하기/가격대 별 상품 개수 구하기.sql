@@ -1,0 +1,7 @@
+-- 코드를 입력하세요
+SELECT 
+    trunc(PRICE/10000)*10000 PRICE_GROUP, 
+    count(*) PRODUCTS 
+FROM PRODUCT 
+GROUP BY trunc(PRICE/10000) 
+ORDER BY 1;
