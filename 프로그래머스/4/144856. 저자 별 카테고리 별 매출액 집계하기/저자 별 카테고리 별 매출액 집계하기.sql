@@ -1,0 +1,9 @@
+-- 코드를 입력하세요
+SELECT a.AUTHOR_ID, a.AUTHOR_NAME, b.CATEGORY, SUM(s.sales * b.price) AS total_sales
+FROM BOOK b, AUTHOR a, BOOK_SALES s
+WHERE b.BOOK_ID = s.BOOK_ID
+AND b.AUTHOR_ID = a.AUTHOR_ID
+AND s.SALES_DATE >= TO_DATE('2022-01-01', 'yyyy-mm-dd')
+AND s.SALES_DATE < TO_DATE('2022-02-01', 'yyyy-mm-dd')
+GROUP BY a.AUTHOR_ID, a.AUTHOR_NAME, b.CATEGORY
+ORDER BY 1, 3 DESC;
